@@ -1,0 +1,8 @@
+AllCops:
+  RunRailsCops: true
+
+LineLength:
+  Max: 120
+
+StringLiterals:
+  EnforcedStyle: double_quotes

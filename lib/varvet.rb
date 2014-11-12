@@ -12,7 +12,12 @@ module Varvet
 
     desc "update", "Updates the Rails project with the latest Varvet template"
     def update
-      system("rake rails:template LOCATION=#{template_path}")
+      system("bundle exec rake rails:template LOCATION=#{template_path}")
+    end
+
+    desc "deploy", "Deploys the application to the specified environment"
+    def deploy(env)
+      system("bundle exec cap #{env} deploy")
     end
 
     private
