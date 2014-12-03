@@ -3,7 +3,7 @@
 # ------------------------------------------------------------------------------
 
 # Set your full path to application.
-app_path = "/var/www/verbumapi"
+app_path = "/var/www/FIXME"
 
 # Set unicorn options
 worker_processes 2
