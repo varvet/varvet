@@ -1,4 +1,4 @@
 user: deploy
 app: <%= fetch(:application) %>
 log: /home/deploy/log
-template: <%= File.expand_path("runit", File.dirname(__FILE__)) %>
+template: <%= File.expand_path("deploy_files/runit", gem_root) %>
