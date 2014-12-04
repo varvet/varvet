@@ -39,10 +39,11 @@ module Varvet
     def postdeploy(env)
       Command.source_root("#{gem_root}/deploy_files")
       @config =  VarvetConfig.config
-      files = ['Procfile','.foreman','config/unicorn.rb']
+      files = ['Procfile','.foreman','config/unicorn.rb','unicorn_launcher']
       files.each do |f|
         template(f)
       end
+      chmod 'unicorn_launcher', 0755
       create_file '.env', "RAILS_ENV=#{env}\n"
       service_dir = File.join(ENV['HOME'],'service')
       run "foreman export runit #{service_dir}"
