@@ -2,9 +2,24 @@ require "seedbank"
 require "thor"
 require "unicorn"
 require "varvet/version"
+require "yaml"
 
 module Varvet
+  class VarvetConfig
+    def self.config()
+      defaults = YAML.load_file("#{VarvetConfig.gem_root}/config/default_config.yml")
+      local_config = YAML.load_file("config/varvet.yml")
+      defaults.merge(local_config)
+    end
+
+    def self.gem_root
+      "#{File.dirname(__FILE__)}/.."
+    end
+  end
+
   class Command < Thor
+    include Thor::Actions
+
     desc "new", "Creates a new Rails project using the Varvet template"
     def new(name)
       system("rails new #{name} --database=mysql --template=#{template_path}")
@@ -20,7 +35,21 @@ module Varvet
       system("bundle exec cap #{env} deploy")
     end
 
+    desc "postdeploy ENV", "Runs on servers after deploy"
+    def postdeploy(env)
+      Command.source_root("#{VarvetConfig.gem_root}/deploy_files")
+      @config =  VarvetConfig.config
+      files = ['Procfile','.foreman','config/unicorn.rb']
+      files.each do |f|
+        template(f)
+      end
+    end
+
     private
+
+    def fetch(key)
+      @config.fetch(key.to_s)
+    end
 
     def template_path
       File.expand_path("../template.rb", File.dirname(__FILE__))

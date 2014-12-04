@@ -1,0 +1,4 @@
+user: deploy
+app: <%= fetch(:application) %>
+log: /home/deploy/log
+template: runit
