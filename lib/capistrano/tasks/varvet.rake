@@ -41,7 +41,7 @@ create_runit_task(:web)
 namespace :deploy do
   task :runit do
     on roles(:all) do |host|
-      execute "cd #{release_path} && bundle exec foreman export runit /home/deploy/service"
+      execute "cd #{release_path} && bundle exec varvet postdeploy #{fetch(:rails_env}"
       invoke 'runit:web:restart'
       3.times do |i|
         begin

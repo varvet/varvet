@@ -37,18 +37,26 @@ module Varvet
 
     desc "postdeploy ENV", "Runs on servers after deploy"
     def postdeploy(env)
-      Command.source_root("#{VarvetConfig.gem_root}/deploy_files")
+      Command.source_root("#{gem_root}/deploy_files")
       @config =  VarvetConfig.config
       files = ['Procfile','.foreman','config/unicorn.rb']
       files.each do |f|
         template(f)
       end
+      create_file '.env', "RAILS_ENV=#{env}\n"
+      service_dir = File.join(ENV['HOME'],'service')
+      run "foreman export runit #{service_dir}"
+
     end
 
     private
 
     def fetch(key)
       @config.fetch(key.to_s)
+    end
+
+    def gem_root
+      Varvet::VarvetConfig.gem_root
     end
 
     def template_path
