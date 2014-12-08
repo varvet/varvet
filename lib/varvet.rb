@@ -39,7 +39,7 @@ module Varvet
     def postdeploy(env)
       Command.source_root("#{gem_root}/deploy_files")
       @config =  VarvetConfig.config
-      files = ['Procfile','.foreman','config/unicorn.rb','unicorn_launcher']
+      files = ['Procfile','.foreman','config/unicorn.rb','unicorn_launcher','config/database.yml']
       files.each do |f|
         template(f)
       end
