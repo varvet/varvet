@@ -18,9 +18,6 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_dependency "capistrano", "~> 3.2.1"
-  spec.add_dependency "capistrano-bundler", "~> 1.1.2"
-  spec.add_dependency "capistrano-rails", "~> 1.1.1"
   spec.add_dependency "seedbank", "~> 0.3.0"
   spec.add_dependency "thor", "~> 0.19.1"
   spec.add_dependency "unicorn", "~> 4.8.3"
