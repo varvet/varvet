@@ -43,6 +43,10 @@ module Varvet
       files.each do |f|
         template(f)
       end
+      files = ['config/database.yml']
+      files.each do |f|
+        copy_file(f)
+      end
       chmod 'unicorn_launcher', 0755
       create_file '.env', "RAILS_ENV=#{env}\n"
       service_dir = File.join(ENV['HOME'],'service')
