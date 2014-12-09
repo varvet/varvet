@@ -1,8 +1,0 @@
-production:
-  database: <%= ENV['MYSQL_DB'] %>
-  socket: /var/run/mysqld/mysqld.sock
-  password: <%= ENV['MYSQL_PASSWORD'] %>
-  username: <%= ENV['MYSQL_USER'] %>
-  adapter: mysql2
-  encoding: utf8
-  pool: 5

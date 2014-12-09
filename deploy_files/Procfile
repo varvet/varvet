@@ -1,2 +1,0 @@
-web: bundle exec ./unicorn_launcher -c ./config/unicorn.rb
-
