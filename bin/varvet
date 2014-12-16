@@ -2,6 +2,6 @@
 $:.push File.dirname(__FILE__) + '/../lib'
 
 require "rubygems"
-require "varvet"
+require "varvet/command"
 
 Varvet::Command.start
