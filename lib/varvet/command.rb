@@ -14,9 +14,10 @@ module Varvet
       system("bundle exec rake rails:template LOCATION=#{template_path}")
     end
 
-    desc "deploy", "Deploys the application to the specified environment"
-    def deploy(env)
-      system("bundle exec cap #{env} deploy")
+    private
+
+    def template_path
+      File.expand_path("../../template.rb", File.dirname(__FILE__))
     end
   end
 end

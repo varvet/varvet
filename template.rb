@@ -1,4 +1,4 @@
-say_status "varvet", "Booting main frame\n", :yellow
+say_status "varvet", "Hello\n", :yellow
 
-say_status "varvet", "Making sure standards are followed\n", :yellow
+say_status "varvet", "Copying files\n", :yellow
 directory "#{File.dirname(__FILE__)}/files", "#{destination_root}/"
