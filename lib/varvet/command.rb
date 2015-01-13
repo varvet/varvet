@@ -1,6 +1,6 @@
 require "thor"
-module Varvet
 
+module Varvet
   class Command < Thor
     include Thor::Actions
 
@@ -18,6 +18,5 @@ module Varvet
     def deploy(env)
       system("bundle exec cap #{env} deploy")
     end
-
   end
 end
