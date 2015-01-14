@@ -1,4 +1,3 @@
-require "seedbank"
 require "unicorn"
 
 module Varvet
