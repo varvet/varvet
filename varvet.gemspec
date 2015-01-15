@@ -7,7 +7,7 @@ require "varvet/version"
 Gem::Specification.new do |gem|
   gem.name          = "varvet"
   gem.version       = Varvet::VERSION
-  gem.authors       = ["Jens Ljungblad", "Varvet"]
+  gem.authors       = ["Varvet"]
   gem.email         = ["info@varvet.se"]
   gem.homepage      = ""
   gem.summary       = ""
