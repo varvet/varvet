@@ -9,7 +9,7 @@ Gem::Specification.new do |gem|
   gem.version       = Varvet::VERSION
   gem.authors       = ["Varvet"]
   gem.email         = ["info@varvet.se"]
-  gem.homepage      = ""
+  gem.homepage      = "https://github.com/varvet/varvet"
   gem.summary       = ""
   gem.description   = ""
   gem.license       = "MIT"
@@ -22,6 +22,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "thor", "~> 0.19.1"
   gem.add_dependency "unicorn", "~> 4.8.3"
   gem.add_dependency "foreman", "~> 0.76.0"
+  gem.add_dependency "pry-rails", "~> 0.3.2"
   gem.add_dependency "rails", "~> 4.1.1"
 
   gem.add_development_dependency "bundler", "~> 1.7"
