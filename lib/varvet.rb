@@ -1,3 +1,4 @@
+require "appsignal"
 require "pry-byebug"
 require "pry-rails"
 require "unicorn"
