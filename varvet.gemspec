@@ -19,12 +19,13 @@ Gem::Specification.new do |gem|
   gem.test_files    = gem.files.grep(%r{^(test|spec|features)/})
   gem.require_paths = ["lib"]
 
-  gem.add_dependency "thor", "~> 0.19.1"
-  gem.add_dependency "unicorn", "~> 4.8.3"
+  gem.add_dependency "appsignal", "~> 0.11.2"
   gem.add_dependency "foreman", "~> 0.76.0"
   gem.add_dependency "pry-byebug", "~> 2.0.0"
   gem.add_dependency "pry-rails", "~> 0.3.2"
   gem.add_dependency "rails", "~> 4.1.1"
+  gem.add_dependency "thor", "~> 0.19.1"
+  gem.add_dependency "unicorn", "~> 4.8.3"
 
   gem.add_development_dependency "bundler", "~> 1.7"
   gem.add_development_dependency "rake", "~> 10.0"
