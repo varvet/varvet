@@ -24,7 +24,6 @@ Gem::Specification.new do |gem|
   gem.add_dependency "pry-byebug", "~> 2.0.0"
   gem.add_dependency "pry-doc", "~> 0.6.0"
   gem.add_dependency "pry-rails", "~> 0.3.2"
-  gem.add_dependency "pry-rescue", "~> 1.4.1"
   gem.add_dependency "pry-stack_explorer", "~> 0.4.9"
   gem.add_dependency "rails", "~> 4.1"
   gem.add_dependency "thor", "~> 0.19.1"
@@ -32,4 +31,7 @@ Gem::Specification.new do |gem|
 
   gem.add_development_dependency "bundler", "~> 1.7"
   gem.add_development_dependency "rake", "~> 10.0"
+
+  # This is in development only since it seems to screw with unicorn
+  gem.add_development_dependency "pry-rescue", "~> 1.4.1"
 end
