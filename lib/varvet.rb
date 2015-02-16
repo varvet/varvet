@@ -15,6 +15,12 @@ module Varvet
           ::Rails.logger.level = Logger.const_get("INFO")
         end
       end
+
+      config.after_initialize do
+        ::Rails.application.routes.draw do
+          get "deploy_status", to: "varvet/deploy_status#index"
+        end
+      end
     end
   end
 end
