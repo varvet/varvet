@@ -17,7 +17,7 @@ module Varvet
       end
 
       config.after_initialize do
-        ::Rails.application.routes.draw do
+        ::Rails.application.routes.prepend do
           get "deploy_status", to: "varvet/deploy_status#index"
         end
       end
