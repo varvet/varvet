@@ -12,6 +12,11 @@ default: &defaults
   # ignore_actions:
   #   - ApplicationController#isup
 
+  ignore_exceptions:
+    - ActionController::RoutingError
+    - ActionController::InvalidAuthenticityToken
+    - ActiveRecord::RecordNotFound
+
 # Configuration per environment, leave out an environment or set active
 # to false to not push metrics for that environment.
 development:
