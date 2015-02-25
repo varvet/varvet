@@ -2,6 +2,7 @@ require "appsignal"
 require "pry-byebug"
 require "pry-rails"
 require "unicorn"
+require "lograge"
 
 module Varvet
   module Rails
@@ -13,6 +14,7 @@ module Varvet
         if ::Rails.env.production?
           ::Rails.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
           ::Rails.logger.level = Logger.const_get("INFO")
+          config.lograge.enabled = true
         end
       end
 
