@@ -27,6 +27,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "rails", "~> 4.1"
   gem.add_dependency "thor", "~> 0.19.1"
   gem.add_dependency "unicorn", "~> 4.8.3"
+  gem.add_dependency "lograge", "~> 0.3.1"
 
   gem.add_development_dependency "bundler", "~> 1.7"
   gem.add_development_dependency "rake", "~> 10.0"
