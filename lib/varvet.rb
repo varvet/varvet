@@ -13,8 +13,8 @@ module Varvet
       config.before_initialize do
         if ::Rails.env.production?
           ::Rails.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
-          ::Rails.logger.level = Logger.const_get("INFO")
-          config.lograge.enabled = true
+          ::Rails.logger.level = Logger.const_get("DEBUG")
+          config.lograge.enabled = false
         end
       end
 
