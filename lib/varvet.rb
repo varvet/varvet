@@ -10,6 +10,21 @@ module Varvet
     end
 
     class Railtie < ::Rails::Railtie
+      config.before_configuration do
+        if ::Rails.env.test?
+          require "m"
+          require "minitest/reporters"
+          require "minitest"
+          require "codeclimate-test-reporter"
+        end
+
+        if ::Rails.env.development?
+          require "better_errors"
+          require "binding_of_caller"
+          require "meta_request"
+        end
+      end
+
       config.before_initialize do
         if ::Rails.env.production?
           ::Rails.logger = ActiveSupport::TaggedLogging.new(Logger.new(STDOUT))
