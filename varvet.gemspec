@@ -21,7 +21,8 @@ Gem::Specification.new do |gem|
 
   # Production
   gem.add_dependency "appsignal", "~> 0.11.2"
-  gem.add_dependency "foreman", "~> 0.76.0"
+  gem.add_dependency "dotenv", "~> 2.1.0"
+  gem.add_dependency "foreman", "~> 0.78.0"
   gem.add_dependency "lograge", "~> 0.3.1"
   gem.add_dependency "pry-byebug", "~> 3.0.1"
   gem.add_dependency "pry-doc", "~> 0.6.0"
@@ -42,7 +43,7 @@ Gem::Specification.new do |gem|
   gem.add_dependency "meta_request", "~> 0.3.4"
 
   # Test & Development
-  gem.add_dependency "dotenv-rails", "~> 1.0.2"
+  gem.add_dependency "dotenv-rails", "~> 2.1.0"
 
   # All
   gem.add_development_dependency "bundler", "~> 1.7"

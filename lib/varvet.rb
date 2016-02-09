@@ -1,8 +1,8 @@
 require "appsignal"
+require "lograge"
 require "pry-byebug"
 require "pry-rails"
 require "unicorn"
-require "lograge"
 
 module Varvet
   module Rails
