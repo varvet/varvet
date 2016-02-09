@@ -23,6 +23,10 @@ module Varvet
           require "binding_of_caller"
           require "meta_request"
         end
+
+        if ::Rails.env.test? || ::Rails.env.development?
+          require "dotenv-rails"
+        end
       end
 
       config.before_initialize do
