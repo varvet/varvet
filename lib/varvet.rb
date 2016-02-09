@@ -10,6 +10,10 @@ module Varvet
     end
 
     class Railtie < ::Rails::Railtie
+      if ::Rails.env.test? || ::Rails.env.development?
+        require "dotenv-rails"
+      end
+
       config.before_configuration do
         if ::Rails.env.test?
           require "m"
@@ -22,10 +26,6 @@ module Varvet
           require "better_errors"
           require "binding_of_caller"
           require "meta_request"
-        end
-
-        if ::Rails.env.test? || ::Rails.env.development?
-          require "dotenv-rails"
         end
       end
 
