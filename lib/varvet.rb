@@ -1,7 +1,5 @@
 require "appsignal"
 require "lograge"
-require "pry-byebug"
-require "pry-rails"
 require "unicorn"
 
 module Varvet
@@ -12,21 +10,6 @@ module Varvet
     class Railtie < ::Rails::Railtie
       if ::Rails.env.test? || ::Rails.env.development?
         require "dotenv-rails"
-      end
-
-      config.before_configuration do
-        if ::Rails.env.test?
-          require "m"
-          require "minitest/reporters"
-          require "minitest"
-          require "codeclimate-test-reporter"
-        end
-
-        if ::Rails.env.development?
-          require "better_errors"
-          require "binding_of_caller"
-          require "meta_request"
-        end
       end
 
       config.before_initialize do
