@@ -21,31 +21,9 @@ Gem::Specification.new do |gem|
 
   # Production
   gem.add_dependency "appsignal", "~> 0.11.2"
-  gem.add_dependency "dotenv", "~> 2.1.0"
+  gem.add_dependency "dotenv-rails", "~> 2.1.0"
   gem.add_dependency "foreman", "~> 0.78.0"
   gem.add_dependency "lograge", "~> 0.3.1"
-  gem.add_dependency "pry-byebug", "~> 3.0.1"
-  gem.add_dependency "pry-doc", "~> 0.6.0"
-  gem.add_dependency "pry-rails", "~> 0.3.2"
-  gem.add_dependency "rails", "~> 4.1"
   gem.add_dependency "thor", "~> 0.19.1"
   gem.add_dependency "unicorn", "~> 4.8.3"
-
-  # Test
-  gem.add_dependency "codeclimate-test-reporter", "~> 0.4.7"
-  gem.add_dependency "m", "~> 1.3.4"
-  gem.add_dependency "minitest-reporters", "~> 1.0.17"
-  gem.add_dependency "minitest", "~> 5.7.0"
-
-  # Development
-  gem.add_dependency "better_errors", "~> 1.1.0"
-  gem.add_dependency "binding_of_caller", "~> 0.7.2"
-  gem.add_dependency "meta_request", "~> 0.3.4"
-
-  # Test & Development
-  gem.add_dependency "dotenv-rails", "~> 2.1.0"
-
-  # All
-  gem.add_development_dependency "bundler", "~> 1.7"
-  gem.add_development_dependency "rake", "~> 10.0"
 end
