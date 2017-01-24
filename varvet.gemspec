@@ -20,10 +20,10 @@ Gem::Specification.new do |gem|
   gem.require_paths = ["lib"]
 
   # Production
-  gem.add_dependency "appsignal", "~> 2.0"
-  gem.add_dependency "dotenv-rails", "~> 2.1.0"
-  gem.add_dependency "foreman", "~> 0.78.0"
+  gem.add_dependency "appsignal", "~> 0.11.2"
+  gem.add_dependency "dotenv-rails", "~> 2.1"
+  gem.add_dependency "foreman", "~> 0.78"
   gem.add_dependency "lograge", "~> 0.3.1"
   gem.add_dependency "thor", "~> 0.19.1"
-  gem.add_dependency "unicorn", "~> 4.8.3"
+  gem.add_dependency "unicorn", "~> 4.8"
 end
