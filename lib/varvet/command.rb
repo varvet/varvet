@@ -14,6 +14,11 @@ module Varvet
       system("bundle exec rake rails:template LOCATION=#{template_path}")
     end
 
+    desc "ops", "Run ops commands through the decoy deployment server"
+    def decoy(env)
+      system("ssh deploy@deploy.varvet.se -aqt \"cd /var/www/decoy/current && bundle exec dotenv ./bin/decoy $@\"")
+    end
+
     private
 
     def template_path
