@@ -318,8 +318,6 @@ Rails/OutputSafety:
 
 Style/AsciiIdentifiers:
   Enabled: true
-  Exclude:
-    - app/models/pdf/clue_layout.rb
 
 # Disabled files / cops
 
@@ -337,13 +335,9 @@ Lint/Debugger:
 
 Style/FileName:
   Enabled: true
-  Exclude:
-    - Brewfile
 
 Style/InverseMethods:
   Enabled: true
-  Exclude:
-    - app/helpers/user_helper.rb
 
 Style/IndentArray:
   Enabled: false
@@ -355,12 +349,6 @@ Style/IndentArray:
 
 Metrics/BlockLength:
   Enabled: true
-  ExcludedMethods:
-    - describe
-    - it
-    - context
-    - scenario
-    - feature
 
 Rails/SkipsModelValidations:
   Enabled: true
