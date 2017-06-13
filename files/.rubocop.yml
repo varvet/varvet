@@ -1,13 +1,14 @@
+# See https://github.com/bbatsov/rubocop/blob/master/config/default.yml
 Rails:
   Enabled: true
 
 Documentation:
   Enabled: false
 
-Metrics/LineLength:
-  Max: 120
-
 Metrics/ClassLength:
+  Max: 300
+
+Metrics/ModuleLength:
   Max: 300
 
 Metrics/MethodLength:
@@ -15,3 +16,347 @@ Metrics/MethodLength:
 
 Style/StringLiterals:
   EnforcedStyle: double_quotes
+
+Style/AccessModifierIndentation:
+  EnforcedStyle: indent
+
+Style/Alias:
+  EnforcedStyle: prefer_alias_method
+
+Style/AlignHash:
+  EnforcedHashRocketStyle: key
+  EnforcedColonStyle: key
+  EnforcedLastArgumentHashStyle: always_inspect
+
+Style/AlignParameters:
+  EnforcedStyle: with_fixed_indentation
+
+Style/AndOr:
+  EnforcedStyle: conditionals
+
+Style/BlockDelimiters:
+  EnforcedStyle: line_count_based
+
+Style/BracesAroundHashParameters:
+  EnforcedStyle: no_braces
+
+Style/CaseIndentation:
+  EnforcedStyle: end
+
+Style/ClassAndModuleChildren:
+  EnforcedStyle: nested
+
+Style/ClassCheck:
+  EnforcedStyle: is_a?
+
+Style/CollectionMethods:
+  PreferredMethods:
+    collect: "map"
+    collect!: "map!"
+    inject: "reduce"
+    detect: "find"
+    find_all: "select"
+
+Style/CommandLiteral:
+  EnforcedStyle: percent_x
+  AllowInnerBackticks: false
+
+Style/CommentAnnotation:
+  Keywords:
+    - TODO
+    - FIXME
+    - OPTIMIZE
+    - HACK
+    - REVIEW
+
+Style/DotPosition:
+  EnforcedStyle: leading
+
+Style/EmptyElse:
+  EnforcedStyle: both
+
+Style/EmptyLinesAroundBlockBody:
+  EnforcedStyle: no_empty_lines
+
+Style/EmptyLinesAroundClassBody:
+  EnforcedStyle: no_empty_lines
+
+Style/EmptyLinesAroundModuleBody:
+  EnforcedStyle: no_empty_lines
+
+Style/EmptyMethod:
+  EnforcedStyle: expanded
+
+Style/Encoding:
+  EnforcedStyle: never
+
+Style/ExtraSpacing:
+  AllowForAlignment: true
+
+Style/For:
+  EnforcedStyle: each
+
+Style/FormatString:
+  EnforcedStyle: format
+
+Style/GlobalVars:
+  AllowedVariables:
+    - autogen_filepath
+    - autogen_buffer
+
+Style/HashSyntax:
+  EnforcedStyle: ruby19_no_mixed_keys
+
+Style/IndentationConsistency:
+  EnforcedStyle: normal
+
+Style/IndentationWidth:
+  Width: 2
+
+Style/Lambda:
+  EnforcedStyle: line_count_dependent
+
+Style/SpaceInLambdaLiteral:
+  EnforcedStyle: require_space
+
+Style/LambdaCall:
+  EnforcedStyle: braces
+
+Style/MethodDefParentheses:
+  EnforcedStyle: require_parentheses
+
+Style/MethodName:
+  EnforcedStyle: snake_case
+
+Style/ModuleFunction:
+  EnforcedStyle: module_function
+
+Style/MultilineArrayBraceLayout:
+  EnforcedStyle: new_line
+
+Style/MultilineHashBraceLayout:
+  EnforcedStyle: new_line
+
+Style/MultilineMethodCallBraceLayout:
+  EnforcedStyle: symmetrical
+
+Style/MultilineMethodDefinitionBraceLayout:
+  EnforcedStyle: new_line
+
+Style/NonNilCheck:
+  IncludeSemanticChanges: true
+
+Style/ParenthesesAroundCondition:
+  AllowSafeAssignment: true
+
+Style/PercentLiteralDelimiters:
+  PreferredDelimiters:
+    default: ()
+    "%i": "[]"
+    "%I": "[]"
+    "%r": "{}"
+    "%w": "[]"
+    "%W": "[]"
+    "%Q": "{}"
+
+Style/PercentQLiterals:
+  EnforcedStyle: upper_case_q
+
+Style/RaiseArgs:
+  EnforcedStyle: exploded
+
+Style/RedundantReturn:
+  AllowMultipleReturnValues: false
+
+Style/RegexpLiteral:
+  EnforcedStyle: slashes
+  AllowInnerSlashes: false
+
+Style/Semicolon:
+  AllowAsExpressionSeparator: false
+
+Style/SingleLineBlockParams:
+  Methods:
+    - reduce:
+        - acc
+        - elem
+    - inject:
+        - acc
+        - elem
+
+Style/FrozenStringLiteralComment:
+  EnforcedStyle: never # We're not ready for this yet, se https://wyeworks.com/blog/2015/12/1/immutable-strings-in-ruby-2-dot-3
+
+Style/SingleLineMethods:
+  AllowIfMethodIsEmpty: false
+
+Style/SpaceAroundBlockParameters:
+  EnforcedStyleInsidePipes: no_space
+
+Style/SpaceAroundEqualsInParameterDefault:
+  EnforcedStyle: space
+
+Style/SpaceBeforeBlockBraces:
+  EnforcedStyle: space
+
+Style/SpaceInsideBlockBraces:
+  EnforcedStyle: space
+
+Style/SpaceInsideHashLiteralBraces:
+  EnforcedStyle: space
+  EnforcedStyleForEmptyBraces: no_space
+
+Style/SpaceInsideStringInterpolation:
+  EnforcedStyle: no_space
+
+Style/SpecialGlobalVars:
+  EnforcedStyle: use_english_names
+
+Style/StabbyLambdaParentheses:
+  EnforcedStyle: require_parentheses
+
+Style/StringLiterals:
+  EnforcedStyle: double_quotes
+
+Style/StringLiteralsInInterpolation:
+  EnforcedStyle: double_quotes
+
+Style/StringMethods:
+  PreferredMethods:
+    intern: to_sym
+
+Style/BarePercentLiterals:
+  EnforcedStyle: percent_q
+
+Style/SymbolArray:
+  EnforcedStyle: percent
+
+Style/TernaryParentheses:
+  EnforcedStyle: require_no_parentheses
+
+Style/TrailingBlankLines:
+  EnforcedStyle: final_newline
+
+Style/TrailingCommaInArguments:
+  EnforcedStyleForMultiline: no_comma
+
+Style/TrailingCommaInLiteral:
+  EnforcedStyleForMultiline: no_comma
+
+Style/VariableName:
+  EnforcedStyle: snake_case
+
+Style/WordArray:
+  EnforcedStyle: percent
+
+Style/GuardClause:
+  Enabled: false
+
+Style/MultilineMethodCallIndentation:
+  EnforcedStyle: indented
+
+Metrics/LineLength:
+  Max: 120
+  AllowHeredoc: true
+  AllowURI: true
+  URISchemes:
+    - http
+    - https
+
+Lint/AssignmentInCondition:
+  AllowSafeAssignment: true
+
+Lint/BlockAlignment:
+  EnforcedStyleAlignWith: start_of_line
+
+Lint/DefEndAlignment:
+  EnforcedStyleAlignWith: start_of_line
+
+Lint/EndAlignment:
+  EnforcedStyleAlignWith: start_of_line
+
+Lint/UnusedBlockArgument:
+  AllowUnusedKeywordArguments: false
+
+Lint/UnusedMethodArgument:
+  AllowUnusedKeywordArguments: false
+
+Rails/Date:
+  EnforcedStyle: strict
+
+Rails/TimeZone:
+  EnforcedStyle: flexible
+
+Rails/NotNullColumn:
+  Include:
+    - db/migrate/*.rb
+
+Rails/ReversibleMigration:
+  Include:
+    - db/migrate/*.rb
+
+Rails/FindBy:
+  Include:
+    - app/models/**/*.rb
+
+Rails/FindEach:
+  Include:
+    - app/models/**/*.rb
+
+Rails/HasAndBelongsToMany:
+  Include:
+    - app/models/**/*.rb
+
+Rails/RequestReferer:
+  EnforcedStyle: referer
+
+Rails/UniqBeforePluck:
+  EnforcedStyle: conservative
+
+Rails/OutputSafety:
+  Enabled: false
+
+Style/AsciiIdentifiers:
+  Enabled: true
+
+# Disabled files / cops
+
+Style/MultilineBlockChain:
+  Enabled: false
+
+Style/DoubleNegation:
+  Enabled: false
+
+Style/UnneededPercentQ:
+  Enabled: false
+
+Lint/Debugger:
+  Enabled: true
+
+Style/FileName:
+  Enabled: true
+
+Style/InverseMethods:
+  Enabled: true
+
+Style/IndentArray:
+  Enabled: false
+  # Or the following isn't allowed
+  # foo([
+  #   %w[n V n],
+  #   %w[V S V]
+  # ])
+
+Metrics/BlockLength:
+  Enabled: true
+
+Rails/SkipsModelValidations:
+  Enabled: true
+
+AllCops:
+  Exclude:
+    - db/schema.rb
+    - tmp/**/*
+    - vendor/**/*
+    - .rubocop.yml
+    - node_modules/**/*
